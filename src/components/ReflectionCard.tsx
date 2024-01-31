@@ -75,6 +75,40 @@ const ReflectionCard = ({ title, description, media = [], isBookMarked, date }: 
               justifyContent: 'space-between',
             }}>
               {altMedia.map((item, idx) => {
+                if (idx < 2 && (altMedia.length) == 2 ) {
+                  return (
+                    <View key={idx} style={{ height: 90, width: '100%' }}>
+                      <ImageBackground
+                        style={{
+                          height: '100%',
+                          width: 'auto',
+                          margin: 0,
+                        }}
+                        resizeMode='cover'
+                        resizeMethod='scale'
+                        source={item.src}
+                        borderRadius={10}
+                      />
+                    </View>
+                  );
+                }
+                if (idx == 2 && (altMedia.length - 1) == (idx)) {
+                  return (
+                    <View key={idx} style={{ height: 100, width: '100%' }}>
+                      <ImageBackground
+                        style={{
+                          height: '100%',
+                          width: 'auto',
+                          margin: 0,
+                        }}
+                        resizeMode='cover'
+                        resizeMethod='scale'
+                        source={item.src}
+                        borderRadius={10}
+                      />
+                    </View>
+                  );
+                }
                 if (idx == 3 && remaining > 0 ) {
                   return (
                     <View key={idx} style={{ height: 90, width: '48%' }}>
