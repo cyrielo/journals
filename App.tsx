@@ -1,5 +1,9 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import type {PropsWithChildren} from 'react';
+import TabNavigation from './src/navigations/TabNavigation';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const Stack = createNativeStackNavigator();
 import {
   SafeAreaView,
   ScrollView,
@@ -18,7 +22,6 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -39,10 +42,23 @@ function App(): React.JSX.Element {
     }
   });
 
+  // <SafeAreaView style={AppStyle.container}>
+  //   <NavigationContainer>
+  //     <ScrollView scrollEnabled>
+  //       <Reflections />
+  //     </ScrollView>
+  //   </NavigationContainer>
+  // </SafeAreaView>
   return (
-    <SafeAreaView style={AppStyle.container}>
-      <Reflections />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="TabNavigation"
+          component={TabNavigation}
+          options={{ headerShown: false,  }}
+        />
+        </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
