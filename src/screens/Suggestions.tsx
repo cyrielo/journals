@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import Header from '../components/Header';
 import Card from '../components/Card';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Section from '../components/Section';
@@ -39,37 +38,35 @@ const Suggestions = (() => {
           color = (suggestion.type == 'reflection') ? COLORS.Teal : color;
           color = (suggestion.type == 'feedback') ? COLORS.Pink : color;
           color = (suggestion.type == 'curiousity') ? COLORS.DarkPink : color;
-          return (<>
-            <Card key={key} style={{
-              backgroundColor: color,
-              padding: 15,
-              marginVertical: 15,
+          return (<Card key={key} style={{
+            backgroundColor: color,
+            padding: 15,
+            marginVertical: 15,
+          }}>
+            <View style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}>
-              <View style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-                <View>
-                  <Text style={{
-                    fontSize: 18
-                  }}>
-                    {suggestion.type.toUpperCase()}
-                  </Text>
-                </View>
-                <TouchableOpacity>
-                  <MaterialCommunityIcon name='refresh' size={32} />
-                </TouchableOpacity>
+              <View>
+                <Text style={{
+                  fontSize: 18
+                }}>
+                  {suggestion.type.toUpperCase()}
+                </Text>
               </View>
-              <Text style={{
-                fontSize: 21,
-                marginTop: 15,
-                textAlign: 'left',
-                justifyContent: 'flex-start'
-              }}>
-                {suggestion.text}
-              </Text>
-            </Card>
-          </>)
+              <TouchableOpacity>
+                <MaterialCommunityIcon name='refresh' size={32} />
+              </TouchableOpacity>
+            </View>
+            <Text style={{
+              fontSize: 21,
+              marginTop: 15,
+              textAlign: 'left',
+              justifyContent: 'flex-start'
+            }}>
+              {suggestion.text}
+            </Text>
+          </Card>)
         })}
       </View>
     </ScrollView>)
