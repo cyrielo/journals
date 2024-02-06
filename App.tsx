@@ -43,20 +43,13 @@ function App(): React.JSX.Element {
     }
   });
 
-  // <SafeAreaView style={AppStyle.container}>
-  //   <NavigationContainer>
-  //     <ScrollView scrollEnabled>
-  //       <Reflections />
-  //     </ScrollView>
-  //   </NavigationContainer>
-  // </SafeAreaView>
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="TabNavigation"
           component={TabNavigation}
-          options={{ headerShown: false,  }}
+          options={{ headerShown: false, }}
         />
         </Stack.Navigator>
     </NavigationContainer>

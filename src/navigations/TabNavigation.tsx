@@ -1,19 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { AboutStackScreen } from '../screens/About';
 import { PreferenceStackScreen } from '../screens/Preferences';
 import {CreateReflectionStackScreen} from '../screens/CreateReflection';
 import { ReflectionsStackScreen } from '../screens/Reflections';
 import { SuggestionsStackScreen } from '../screens/Suggestions';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicon from 'react-native-vector-icons/Ionicons';
-
-//MaterialCommunityIcons
-//grain brain
-
-//Ionicon
-//create-sharp filter-outline
 
 export const screenConfig = { header: () => null };
 
@@ -59,9 +51,7 @@ export default (() => {
         tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: '#bda5e0',
         tabBarInactiveTintColor: 'grey',
-        
       })}
-      
       >
       <Tab.Screen name='ref' component={ReflectionsStackScreen} options={{ ...screenConfig }} />
       <Tab.Screen name='sug' component={SuggestionsStackScreen} options={{ tabBarBadge: 1, ...screenConfig }} />
