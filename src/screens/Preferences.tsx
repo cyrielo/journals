@@ -50,6 +50,25 @@ const Preferences = (() => {
             <MaterialCommunityIcon style={{}} name='chevron-right' size={32} />
           </View>
         </View>
+        <Section title='Account' />
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderBottomWidth: 0.5,
+          paddingBottom: 15,
+        }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Ionicon style={{ marginRight: 10 }} name='sync' size={32} />
+            <Text style={{ fontSize: 18 }}>Sync</Text>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ fontSize: 18, marginRight: 10 }}>
+              Off
+            </Text>
+            <MaterialCommunityIcon style={{}} name='chevron-right' size={32} />
+          </View>
+        </View>
     </View>
     </ScrollView>)
 })
