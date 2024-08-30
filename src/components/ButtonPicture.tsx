@@ -9,14 +9,11 @@ type ButtonProps = PropsWithChildren<{
   disabled?: boolean;
   style?: object;
   icon?: string;
-  onPress?: () => {};
 }>
 
-export default ({ src, style, title, disabled, children, icon, onPress }: ButtonProps) => {
+export default ({ src, style, title, disabled, children, icon }: ButtonProps) => {
   return(
-    <TouchableOpacity
-      activeOpacity={0.8}
-      disabled={disabled} 
+    <View
       style={{
         backgroundColor: '#171717',
         borderColor: '#171717',
@@ -26,7 +23,6 @@ export default ({ src, style, title, disabled, children, icon, onPress }: Button
         borderRadius: 50,
         ...style
       }}
-      onPress={onPress}
       >
       <ImageBackground
         style={{
@@ -46,6 +42,6 @@ export default ({ src, style, title, disabled, children, icon, onPress }: Button
       }}>{title}</Text>
       {children}
       { icon ? <Icon style={{ marginHorizontal: 10 }} name={icon} color={'white'} size={24} /> : null  }
-    </TouchableOpacity>
+    </View>
   );
 }
